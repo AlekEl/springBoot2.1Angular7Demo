@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.bg {
+  height: 100%;
+  /* Center and scale the image nicely */
+  background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img(11).jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.navbar-light {
+  max-width: 900px;
+  margin: auto;
+}
