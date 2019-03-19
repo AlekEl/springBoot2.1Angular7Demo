@@ -30,6 +30,6 @@ export class QuestionService {
   }
 
   remove(href: string) {
-    this.http.delete(href);
+    return this.http.delete(href);
   }
 }

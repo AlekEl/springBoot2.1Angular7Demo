@@ -1,3 +1,25 @@
-<p>
-  question-edit works!
-</p>
+<form #questionForm='ngForm' (ngSubmit)="save(questionForm.value)">
+  <div class="add" align="center">
+    <h1>{{question.author ? 'Edit' : 'Add'}} Question</h1>
+  </div>
+  <div class="border border-secondary">
+    <input type="hidden" name="href" [(ngModel)]="question.href">
+    <input value="test" type="hidden" name="author" [(ngModel)]="question.author">
+      <div class="form-group" align="center">
+        <label for="shortDescription"><h3>Short Description:</h3></label><br>
+        <input id="shortDescription" placeholder="Short Description" [(ngModel)]="question.shortDescription"
+               required name="shortDescription" #shortDescription><br>
+        <label for="content"><h3>Question:</h3></label><br>
+        <textarea id="content" [(ngModel)]="question.content" placeholder="Content"
+                  required name="content" rows="7" #content
+                  cols="40"></textarea><br>
+        <button class="btn btn-outline-light" type="submit"
+                value="Submit" [disabled]="!questionForm.form.valid">Save</button>
+        <br>
+        <button class="btn btn-danger" (click)="remove(question.href)"
+                *ngIf="question.href" type="button">Delete</button>
+      </div>
+  </div>
+</form>
+
+<a href="/">Back</a>
