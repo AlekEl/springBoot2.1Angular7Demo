@@ -12,7 +12,7 @@ export class QuestionService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get("//localhost:8080/questions")
+    return this.http.get(this.QUESTION_API);
   }
 
   get (id: string) {
@@ -24,8 +24,11 @@ export class QuestionService {
     if(question['href']) {
       result = this.http.put(question['href'], question);
     } else {
-      result = this.http.post(this.QUESTION_API, question)
+      result = this.http.post(this.QUESTION_API, question);
+      console.log(question['href']);
     }
+    console.log("LOOOK!")
+    console.log(question);
     return result;
   }
 

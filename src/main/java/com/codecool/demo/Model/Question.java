@@ -16,5 +16,5 @@ public class Question {
     private Long id;
     private @NonNull String content;
     private @NonNull String shortDescription;
-    private @NonNull String author;
+    private String author;
 }

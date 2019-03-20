@@ -4,7 +4,7 @@
   </div>
   <div class="border border-secondary">
     <input type="hidden" name="href" [(ngModel)]="question.href">
-    <input value="test" type="hidden" name="author" [(ngModel)]="question.author">
+    <!--<input value="test" type="hidden" name="author" [(ngModel)]="question.author">-->
       <div class="form-group" align="center">
         <label for="shortDescription"><h3>Short Description:</h3></label><br>
         <input id="shortDescription" placeholder="Short Description" [(ngModel)]="question.shortDescription"
@@ -22,4 +22,4 @@
   </div>
 </form>
 
-<a href="/">Back</a>
+<a [routerLink]="['/question-list']">Back</a>
